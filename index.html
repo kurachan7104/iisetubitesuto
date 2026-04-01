@@ -60,7 +60,7 @@
       100% { opacity: 0; }
     }
 
-    /* ヘッダー（会社概要ページと完全一致） */
+    /* ヘッダー（全ページ統一） */
     header {
       position: sticky;
       top: 0;
@@ -100,7 +100,7 @@
       font-family: "HGP行書体", "HG行書体", serif;
     }
 
-    /* メインビジュアル（縦画面最適化） */
+    /* メインビジュアル（PC版フォント70px維持） */
     .main-visual {
       text-align: center;
       padding: 120px 0 180px;
@@ -110,14 +110,14 @@
       z-index: 2;
     }
     .main-visual h2 {
-      font-size: 70px;
+      font-size: 70px;   /* ← PC版はこのまま維持 */
       margin-bottom: 20px;
     }
     .main-visual p {
       font-size: 32px;
     }
 
-    /* フッター（会社概要ページと完全一致） */
+    /* フッター */
     footer {
       background: #222;
       color: #fff;
@@ -132,7 +132,7 @@
     .footer-info h3 { font-size: 20px; margin: 5px 0; }
     .footer-info p  { font-size: 12px; margin: 10px 0 0; }
 
-    /* スマホ縦画面対応（最重要） */
+    /* スマホ縦画面対応（フォント縮小＋改行禁止） */
     @media screen and (max-width: 768px) {
 
       header .inner {
@@ -159,9 +159,12 @@
       .main-visual {
         padding: 100px 0 140px;
       }
+
       .main-visual h2 {
-        font-size: 40px;
+        font-size: 34px;      /* ← スマホだけ縮小 */
+        white-space: nowrap;  /* ← 絶対に改行させない */
       }
+
       .main-visual p {
         font-size: 20px;
       }
